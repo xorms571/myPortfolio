@@ -233,7 +233,7 @@ $(document).ready(function () {
     const index = $(this).index();
 
     // 각 텍스트에 따라 이동할 위치를 설정 (500px, 1000px, ...)
-    const scrollTo = (index + 1) * 500; // 1부터 시작하므로 1을 더함
+    const scrollTo = (index + 1) * 450; // 1부터 시작하므로 1을 더함
 
     // 스크롤 애니메이션
     $("html, body").stop().animate(
@@ -284,35 +284,31 @@ window.addEventListener("scroll", () => {
 const marqueeContainer = document.getElementById("marquee-container1");
 const marqueeContainer2 = document.getElementById("marquee-container2");
 
-if (marqueeContainer) {
-  const totalWidth = marqueeContainer.scrollWidth; // 전체 너비
+const totalWidth1 = marqueeContainer.scrollWidth; // 전체 너비
 
-  // 애니메이션 시작
-  gsap.set(marqueeContainer, { x: 0 }); // 초기 위치 설정
-  gsap.to(marqueeContainer, {
-    x: -totalWidth / 2, // 전체 너비의 절반만큼 이동
-    duration: totalWidth / 100, // 속도 조절
-    ease: "none", // 일정한 속도로 애니메이션
-    repeat: -1, // 무한 반복
-    onRepeat: () => {
-      // 애니메이션 반복될 때마다 위치를 초기화
-      gsap.set(marqueeContainer, { x: 0 });
-    },
-  });
-}
+// 애니메이션 시작
+gsap.set(marqueeContainer, { x: 0 }); // 초기 위치 설정
+gsap.to(marqueeContainer, {
+  x: -totalWidth1 / 2, // 전체 너비의 절반만큼 이동
+  duration: totalWidth1 / 100, // 속도 조절
+  ease: "none", // 일정한 속도로 애니메이션
+  repeat: -1, // 무한 반복
+  onRepeat: () => {
+    // 애니메이션 반복될 때마다 위치를 초기화
+    gsap.set(marqueeContainer, { x: 0 });
+  },
+});
 
-if (marqueeContainer2) {
-  const totalWidth = marqueeContainer2.scrollWidth; // 전체 너비
-  // 애니메이션 시작
-  gsap.set(marqueeContainer2, { x: -totalWidth / 2 }); // 초기 위치를 왼쪽으로 설정
-  gsap.to(marqueeContainer2, {
-    x: 0, // 오른쪽으로 이동
-    duration: totalWidth / 100, // 속도 조절
-    ease: "none", // 일정한 속도로 애니메이션
-    repeat: -1, // 무한 반복
-    onRepeat: () => {
-      // 애니메이션 반복될 때마다 위치를 초기화
-      gsap.set(marqueeContainer2, { x: -totalWidth / 2 });
-    },
-  });
-}
+const totalWidth2 = marqueeContainer2.scrollWidth; // 전체 너비
+// 애니메이션 시작
+gsap.set(marqueeContainer2, { x: -totalWidth2 / 2 }); // 초기 위치를 왼쪽으로 설정
+gsap.to(marqueeContainer2, {
+  x: 0, // 오른쪽으로 이동
+  duration: totalWidth2 / 100, // 속도 조절
+  ease: "none", // 일정한 속도로 애니메이션
+  repeat: -1, // 무한 반복
+  onRepeat: () => {
+    // 애니메이션 반복될 때마다 위치를 초기화
+    gsap.set(marqueeContainer2, { x: -totalWidth2 / 2 });
+  },
+});
