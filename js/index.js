@@ -233,14 +233,14 @@ $(document).ready(function () {
     const index = $(this).index();
 
     // 각 텍스트에 따라 이동할 위치를 설정 (500px, 1000px, ...)
-    const scrollTo = (index + 1) * 450; // 1부터 시작하므로 1을 더함
+    const scrollTo = (index + 1) * 400; // 1부터 시작하므로 1을 더함
 
     // 스크롤 애니메이션
     $("html, body").stop().animate(
       {
         scrollTop: scrollTo,
       },
-      500
+      400
     ); // 애니메이션 duration
   });
 });
@@ -269,7 +269,7 @@ ScrollTrigger.create({
 
 // 페이지가 로드되면 스크롤을 500px로 이동
 window.onload = function () {
-  window.scrollTo(0, 500);
+  window.scrollTo(0, 300);
 };
 
 // 스크롤 제한을 위한 이벤트 리스너
