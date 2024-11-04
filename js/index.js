@@ -223,7 +223,7 @@ $(window).on("wheel", function (e) {
 
   // 일반적인 스크롤처럼 보이게 하려면 'duration'을 0으로 설정
   gsap.to(window, {
-    scrollTo: { y: 300 * pageNumber, autoKill: false },
+    scrollTo: { y: 500 * pageNumber, autoKill: false },
     duration: currentScroll < scrollThreshold ? 0 : 0.5, // 스크롤 높이에 따라 duration 조절
   });
 });
@@ -233,7 +233,7 @@ $(document).ready(function () {
     const index = $(this).index();
 
     // 각 텍스트에 따라 이동할 위치를 설정 (500px, 1000px, ...)
-    const scrollTo = (index + 1) * 300; // 1부터 시작하므로 1을 더함
+    const scrollTo = (index + 1) * 500; // 1부터 시작하므로 1을 더함
 
     // 스크롤 애니메이션
     $("html, body").stop().animate(
